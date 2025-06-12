@@ -3,13 +3,17 @@
 ![ODISSEI banner](https://odissei-data.nl/wp-content/uploads/2024/05/banner-ODISSEI-1536x415.jpeg)
 
 
-# ODISSEI Portal User Guide
+# ODISSEI Portal 
+
+https://portal.odissei.nl/
+
+## ODISSEI Portal User Guide
 
 See https://doi.org/10.5281/zenodo.15236529.
 
-# ODISSEI Portal Infrastructure Documentation
+## ODISSEI Portal Infrastructure Documentation
 
-## 1. Application Stacks & Environments
+### 1. Application Stacks & Environments
 
 List of repositories for each application stack.
 
@@ -20,7 +24,7 @@ List of repositories for each application stack.
 | Workflow orchestrator   | <https://github.com/odissei-data/ingestion-workflow-orchestrator> | 3.1.2      | Automatic deployment on production via CI/CD        |
 | Microservices           | https://github.com/odissei-data/dataverse-importer                | master     | Microservice used to import datasets into Dataverse |
 
-### ODISSEI Portal
+#### ODISSEI Portal
 
 The ODISSEI Portal runs on three environments: Production, Staging, and
 Devstack.
@@ -36,9 +40,8 @@ To run the Portal, two dockerized application stacks, are required:
   Prefect server and labs-demo server that run the Workflow Orchestrator
   and microservices used by the Orchestrator respectively.
 
-- 
 
-### Workflow Orchestrator
+#### Workflow Orchestrator
 
 The Workflow Orchestrator is used to automatically ingest metadata from
 the different data providers**,** present in the ODISSEI Portal. The
@@ -46,7 +49,7 @@ ingestion-workflow-orchestrator application stack is behind the Workflow
 Orchestrator, using Prefect and Postgres DB to coordinate the actions of
 metadata ingestion and enrichment microservices for Orchestrator
 
-## 2. Server Inventory
+### 2. Server Inventory
 
 List of servers and their roles:
 
@@ -58,9 +61,9 @@ List of servers and their roles:
 | prefect         | Production      | Ubuntu 24.04         | Azure        | 2 vCPUs, 8GB RAM, 124GB SSD  |
 | labs-demo       | Production      | Ubuntu 22.04         | Azure        | 4 vCPUs, 16GB RAM, 30GB SSD  |
 
-## 3. Applications and Services
+### 3. Applications and Services
 
-### Production Server: odissei-02
+#### Production Server: odissei-02
 
 This server is used to host the production ODISSEI Portal
 (<https://portal.odissei.nl>) and Skosmos vocabulary browser
@@ -77,7 +80,7 @@ DANS personnel.
 | Fuseki        | Skosmos                 | stain/jena-fuseki:5.1.0 | [odissei-dataverse-stack](https://github.com/odissei-data/odissei-dataverse-stack) | RDF triple store               |
 | Varnish Cache | Skosmos                 | Latest                  | [odissei-dataverse-stack](https://github.com/odissei-data/odissei-dataverse-stack) | Caching layer                  |
 
-### Staging Server: odissei-01
+#### Staging Server: odissei-01
 
 This server is used to host the staging ODISSEI Portal
 (<https://portal.staging.odissei.nl>) and Skosmos vocabulary browser
@@ -93,7 +96,7 @@ Azure and can only be accessed by DANS personnel.
 | Fuseki        | Skosmos                 | stain/jena-fuseki:5.1.0 | [odissei-dataverse-stack](https://github.com/odissei-data/odissei-dataverse-stack) | RDF triple store               |
 | Varnish Cache | Skosmos                 | Latest                  | [odissei-dataverse-stack](https://github.com/odissei-data/odissei-dataverse-stack) | Caching layer                  |
 
-### Development Server: devstack
+#### Development Server: devstack
 
 This server is used by ODISSEI developers for testing and
 experimentation. It host the staging ODISSEI Portal
@@ -116,7 +119,7 @@ username.
 | Varnish Cache | sd-skosmos              | Latest                  | [odissei-dataverse-stack](https://github.com/odissei-data/odissei-dataverse-stack) | Caching layer                                           |
 | Prefect       | workflow-orchestrator   | 2.1.0                   |                                                                                    | Tool to ingest metadata into Dataverse using workflows. |
 
-### Prefect Server: prefect
+#### Prefect Server: prefect
 
 This server hosts the Prefect workflow orchestrator. The orchestrator is
 used to automatically ingest dataset metadata. For each data provider
@@ -140,7 +143,7 @@ orchestrator setup.
 |-------------|-----------------------|-------------|---------------------------|---------------------------------------------------------|
 | Prefect     | workflow-orchestrator | 3.1.2       |                           | Tool to ingest metadata into Dataverse using workflows. |
 
-### Microservices Server: labs-demo
+#### Microservices Server: labs-demo
 
 This server hosts the metadata microservices. These microservices are
 all containerized and deployed via a CI/CD setup, which tests the code,
@@ -162,21 +165,21 @@ personnel.
 | OAI-PMH Harvester        |             | [ODISSEI Harvester](https://oai-harvester.labs.dansdemo.nl/docs)    | [odissei-harvester](https://github.com/odissei-data/odissei-harvester)                                 |
 | OAI Enrichment Service   |             | [OAI Enricher Service](https://oai-service.labs.dansdemo.nl/docs)   | [oai-enricher-service](https://github.com/ekoi/oai-enricher-service)                                   |
 
-## 4. Networking & Security
+### 4. Networking & Security
 
 - **Networking:**
 
   - Traefik container with automatic SSL certificate renewal using
     > letsencrypt.
 
-## 6. Monitoring & Logging
+### 5. Monitoring & Logging
 
 - **Monitoring:** ODISSEI production portal website is monitored in
   zabbix.
 
 - **Logging:** No centralized logging. \`docker logs {container name}\`
 
-## 7. Backup
+### 6. Backup
 
 - **Database Backups:** Cronjob that makes backups every day. Kept on
   server itself.
