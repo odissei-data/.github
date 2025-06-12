@@ -22,7 +22,7 @@ List of repositories for each application stack.
 | ODISSEI Dataverse stack | <https://github.com/odissei-data/odissei-devstack>                | master     | Deployed manually                                   |
 | SKOSMOS stack           | <https://github.com/NatLibFi/Skosmos>                             | 2.18.1     | Setup by devstack repo                              |
 | Workflow orchestrator   | <https://github.com/odissei-data/ingestion-workflow-orchestrator> | 3.1.2      | Automatic deployment on production via CI/CD        |
-| Microservices           | https://github.com/odissei-data/dataverse-importer                | master     | Microservice used to import datasets into Dataverse |
+| Microservices           | <https://github.com/odissei-data/dataverse-importer>              | master     | Microservice used to import datasets into Dataverse |
 
 #### ODISSEI Portal
 
@@ -71,7 +71,7 @@ This server is used to host the production ODISSEI Portal
 proxy. This server runs in Microsoft Azure and can only be accessed by
 DANS personnel.
 
-| **Service**   | **Stack**               | **Version**             | **Deployment repository**                                                          | **Notes**                      |
+| **Service**   | **Stack**               | **Version**             | **Repository**                                                          | **Notes**                      |
 |---------------|-------------------------|-------------------------|------------------------------------------------------------------------------------|--------------------------------|
 | SOLR          | ODISSEI Dataverse stack | v9.x                    | [odissei-dataverse-stack](https://github.com/odissei-data/odissei-dataverse-stack) | Used for indexing and search   |
 | PostgreSQL    | ODISSEI Dataverse stack | v16                     | [odissei-dataverse-stack](https://github.com/odissei-data/odissei-dataverse-stack) | Stores metadata and user data  |
@@ -87,7 +87,7 @@ This server is used to host the staging ODISSEI Portal
 (<https://skosmos.staging.odissei.nl>). This server runs in Microsoft
 Azure and can only be accessed by DANS personnel.
 
-| **Service**   | **Stack**               | **Version**             | **Deployment repository**                                                          | **Notes**                      |
+| **Service**   | **Stack**               | **Version**             | **Repository**                                                          | **Notes**                      |
 |---------------|-------------------------|-------------------------|------------------------------------------------------------------------------------|--------------------------------|
 | SOLR          | ODISSEI Dataverse stack | 9.x                     | [odissei-dataverse-stack](https://github.com/odissei-data/odissei-dataverse-stack) | Used for indexing and search   |
 | PostgreSQL    | ODISSEI Dataverse stack | 16                      | [odissei-dataverse-stack](https://github.com/odissei-data/odissei-dataverse-stack) | Stores metadata and user data  |
@@ -109,7 +109,7 @@ as a developer. They can then add their public ssh key to their profile
 and will gain automatic access to the server using ssh with their
 username.
 
-| **Service**   | **Stack**               | **Version**             | **Deployment repository**                                                          | **Notes**                                               |
+| **Service**   | **Stack**               | **Version**             | **Repository**                                                          | **Notes**                                               |
 |---------------|-------------------------|-------------------------|------------------------------------------------------------------------------------|---------------------------------------------------------|
 | SOLR          | ODISSEI Dataverse stack | 9.x                     | [odissei-dataverse-stack](https://github.com/odissei-data/odissei-dataverse-stack) | Used for indexing and search                            |
 | PostgreSQL    | ODISSEI Dataverse stack | 16                      | [odissei-dataverse-stack](https://github.com/odissei-data/odissei-dataverse-stack) | Stores metadata and user data                           |
@@ -139,7 +139,7 @@ manually, which can be done via the orchestrator on
 [https://prefect.dansdemo.nl](https://prefect.dansdemo.nl/) or a local
 orchestrator setup.
 
-| **Service** | **Stack**             | **Version** | **Deployment repository** | **Notes**                                               |
+| **Service** | **Stack**             | **Version** | **Repository** | **Notes**                                               |
 |-------------|-----------------------|-------------|---------------------------|---------------------------------------------------------|
 | Prefect     | workflow-orchestrator | 3.1.2       |                           | Tool to ingest metadata into Dataverse using workflows. |
 
@@ -169,15 +169,14 @@ personnel.
 
 - **Networking:**
 
-  - Traefik container with automatic SSL certificate renewal using
-    > letsencrypt.
+  - Traefik container with automatic SSL certificate renewal using letsencrypt.
 
 ### 5. Monitoring & Logging
 
 - **Monitoring:** ODISSEI production portal website is monitored in
   zabbix.
 
-- **Logging:** No centralized logging. \`docker logs {container name}\`
+- **Logging:** No centralized logging. `docker logs {container name}`
 
 ### 6. Backup
 
