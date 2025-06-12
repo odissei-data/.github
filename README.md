@@ -4,8 +4,6 @@
 
 
 
-# ODISSEI Portal Infrastructure
-
 ## 1. Application Stacks & Environments
 
 List of repositories for each application stack.
@@ -19,11 +17,10 @@ List of repositories for each application stack.
 
 ### ODISSEI Portal
 
-The ODISSEI Portal runs on **three environments**: Production, Staging,
-and Devstack.
+The ODISSEI Portal runs on three environments: Production, Staging, and
+Devstack.
 
-**To run the Portal, 2 application stacks,** using Docker containers,
-are required**:**
+To run the Portal, two dockerized application stacks, are required:
 
 - Dataverse portal stack: uses a SOLR, Postgres, and Payara containers.
 
