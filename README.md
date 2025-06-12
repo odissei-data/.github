@@ -9,9 +9,9 @@ https://portal.odissei.nl/
 
 ## ODISSEI Portal User Guide
 
-See https://doi.org/10.5281/zenodo.15236529.
+https://doi.org/10.5281/zenodo.15236529.
 
-## ODISSEI Portal Infrastructure Documentation
+## ODISSEI Portal Infrastructure
 
 ### 1. Application Stacks & Environments
 
