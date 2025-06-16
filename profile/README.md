@@ -19,7 +19,7 @@ List of repositories for each application stack.
 
 | **Application Stack**   | **Repository URL**                                                | **Latest** | **Deployment Method**                               |
 |-------------------------|-------------------------------------------------------------------|------------|-----------------------------------------------------|
-| ODISSEI Dataverse stack | <https://github.com/odissei-data/odissei-devstack>                | master     | Deployed manually                                   |
+| ODISSEI Dataverse stack | <https://github.com/odissei-data/odissei-dataverse-stack>         | master     | Deployed manually                                   |
 | SKOSMOS stack           | <https://github.com/NatLibFi/Skosmos>                             | 2.18.1     | Setup by devstack repo                              |
 | Workflow orchestrator   | <https://github.com/odissei-data/ingestion-workflow-orchestrator> | 3.1.2      | Automatic deployment on production via CI/CD        |
 | Microservices           | <https://github.com/odissei-data/dataverse-importer>              | master     | Microservice used to import datasets into Dataverse |
