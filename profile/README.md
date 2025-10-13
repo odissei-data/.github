@@ -55,15 +55,15 @@ List of servers and their roles:
 
 | **Server Name** | **Environment** | **Operating System** | **Location** | **Specifications**           |
 |-----------------|-----------------|----------------------|--------------|------------------------------|
-| odissei-02      | Production      | Ubuntu 22.04         | Azure        | 4 vCPUs, 16GB RAM, 500GB SSD |
-| odissei-01      | Staging         | Ubuntu 22.04         | Azure        | 4 vCPUs, 16GB RAM, 250GB SSD |
+| odissei-01      | Production      | Ubuntu 22.04         | Azure        | 4 vCPUs, 16GB RAM, 250GB SSD |
+| odissei-02      | Staging         | Ubuntu 22.04         | Azure        | 4 vCPUs, 16GB RAM, 500GB SSD |
 | devstack        | Development     | Ubuntu 22.04         | SURF R-cloud | 8 vCPUs, 32GB RAM, 250GB SSD |
 | prefect         | Production      | Ubuntu 24.04         | Azure        | 2 vCPUs, 8GB RAM, 124GB SSD  |
 | labs-demo       | Production      | Ubuntu 22.04         | Azure        | 4 vCPUs, 16GB RAM, 30GB SSD  |
 
 ### 3. Applications and Services
 
-#### Production Server: odissei-02
+#### Production Server: 
 
 This server is used to host the production ODISSEI Portal
 (<https://portal.odissei.nl>) and Skosmos vocabulary browser
@@ -80,7 +80,7 @@ DANS personnel.
 | Fuseki        | Skosmos                 | stain/jena-fuseki:5.1.0 | [odissei-dataverse-stack](https://github.com/odissei-data/odissei-dataverse-stack) | RDF triple store               |
 | Varnish Cache | Skosmos                 | Latest                  | [odissei-dataverse-stack](https://github.com/odissei-data/odissei-dataverse-stack) | Caching layer                  |
 
-#### Staging Server: odissei-01
+#### Staging Server: 
 
 This server is used to host the staging ODISSEI Portal
 (<https://portal.staging.odissei.nl>) and Skosmos vocabulary browser
