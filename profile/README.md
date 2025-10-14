@@ -20,9 +20,9 @@ List of repositories for each application stack.
 | **Application Stack**   | **Repository URL**                                                | **Latest** | **Deployment Method**                               |
 |-------------------------|-------------------------------------------------------------------|------------|-----------------------------------------------------|
 | ODISSEI Dataverse stack | <https://github.com/odissei-data/odissei-dataverse-stack>         | master     | Deployed manually                                   |
-| SKOSMOS stack           | <https://github.com/NatLibFi/Skosmos>                             | 2.18.1     | Setup by devstack repo                              |
-| Workflow orchestrator   | <https://github.com/odissei-data/ingestion-workflow-orchestrator> | 3.1.2      | Automatic deployment on production via CI/CD        |
-| Microservices           | <https://github.com/odissei-data/dataverse-importer>              | master     | Microservice used to import datasets into Dataverse |
+| SKOSMOS stack           | <https://github.com/odissei-data/sd-skosmos>                      | main       | Deployed manually                                   |
+| Workflow orchestrator   | <https://github.com/odissei-data/ingestion-workflow-orchestrator> | 3.2.0      | Automatic deployment on production via CI/CD        |
+| Microservices           | <https://github.com/odissei-data/dataverse-importer>              | main       | Microservice used to import datasets into Dataverse |
 
 #### ODISSEI Portal
 
@@ -55,9 +55,9 @@ List of servers and their roles:
 
 | **Server Name** | **Environment** | **Operating System** | **Location** | **Specifications**           |
 |-----------------|-----------------|----------------------|--------------|------------------------------|
-| odissei-01      | Production      | Ubuntu 22.04         | Azure        | 4 vCPUs, 16GB RAM, 250GB SSD |
-| odissei-02      | Staging         | Ubuntu 22.04         | Azure        | 4 vCPUs, 16GB RAM, 500GB SSD |
-| devstack        | Development     | Ubuntu 22.04         | SURF R-cloud | 8 vCPUs, 32GB RAM, 250GB SSD |
+| odissei-01      | Production      | Ubuntu 22.04         | Azure        | 4 vCPUs, 16GB RAM, 124GB SSD |
+| odissei-02      | Staging         | Ubuntu 22.04         | Azure        | 4 vCPUs, 16GB RAM, 60GB SSD  |
+| devstack        | Development     | Ubuntu 24.04         | SURF R-cloud | 8 vCPUs, 32GB RAM, 250GB SSD |
 | prefect         | Production      | Ubuntu 24.04         | Azure        | 2 vCPUs, 8GB RAM, 124GB SSD  |
 | labs-demo       | Production      | Ubuntu 22.04         | Azure        | 4 vCPUs, 16GB RAM, 30GB SSD  |
 
@@ -75,8 +75,9 @@ DANS personnel.
 |---------------|-------------------------|-------------------------|------------------------------------------------------------------------------------|--------------------------------|
 | SOLR          | ODISSEI Dataverse stack | v9.x                    | [odissei-dataverse-stack](https://github.com/odissei-data/odissei-dataverse-stack) | Used for indexing and search   |
 | PostgreSQL    | ODISSEI Dataverse stack | v16                     | [odissei-dataverse-stack](https://github.com/odissei-data/odissei-dataverse-stack) | Stores metadata and user data  |
-| Payara        | ODISSEI Dataverse stack | gdcc/dataverse:alpha    | [odissei-dataverse-stack](https://github.com/odissei-data/odissei-dataverse-stack) | Runs the Dataverse application |
-| Skosmos       | Skosmos                 | Latest                  | [odissei-dataverse-stack](https://github.com/odissei-data/odissei-dataverse-stack) | Vocabulary browser             |
+| Payara        | ODISSEI Dataverse stack | gdcc/dataverse:6.6-noble| [odissei-dataverse-stack](https://github.com/odissei-data/odissei-dataverse-stack) | Runs the Dataverse application |
+| Skosmos       | Skosmos                 | sd-skosmos:v2.18.1-1.8.0| [odissei-dataverse-stack](https://github.com/odissei-data/odissei-dataverse-stack) | Vocabulary browser             |
+| Skosmos-loader| Skosmos                 | sd-skosmos:v2.18.1-1.8.0| [odissei-dataverse-stack](https://github.com/odissei-data/odissei-dataverse-stack) | Vocabulary loader              |
 | Fuseki        | Skosmos                 | stain/jena-fuseki:5.1.0 | [odissei-dataverse-stack](https://github.com/odissei-data/odissei-dataverse-stack) | RDF triple store               |
 | Varnish Cache | Skosmos                 | Latest                  | [odissei-dataverse-stack](https://github.com/odissei-data/odissei-dataverse-stack) | Caching layer                  |
 
@@ -89,10 +90,11 @@ Azure and can only be accessed by DANS personnel.
 
 | **Service**   | **Stack**               | **Version**             | **Repository**                                                          | **Notes**                      |
 |---------------|-------------------------|-------------------------|------------------------------------------------------------------------------------|--------------------------------|
-| SOLR          | ODISSEI Dataverse stack | 9.x                     | [odissei-dataverse-stack](https://github.com/odissei-data/odissei-dataverse-stack) | Used for indexing and search   |
-| PostgreSQL    | ODISSEI Dataverse stack | 16                      | [odissei-dataverse-stack](https://github.com/odissei-data/odissei-dataverse-stack) | Stores metadata and user data  |
-| Payara        | ODISSEI Dataverse stack | gdcc/dataverse:alpha    | [odissei-dataverse-stack](https://github.com/odissei-data/odissei-dataverse-stack) | Runs the Dataverse application |
-| Skosmos       | Skosmos                 | Latest                  | [odissei-dataverse-stack](https://github.com/odissei-data/odissei-dataverse-stack) | Vocabulary browser             |
+| SOLR          | ODISSEI Dataverse stack | v9.x                    | [odissei-dataverse-stack](https://github.com/odissei-data/odissei-dataverse-stack) | Used for indexing and search   |
+| PostgreSQL    | ODISSEI Dataverse stack | v16                     | [odissei-dataverse-stack](https://github.com/odissei-data/odissei-dataverse-stack) | Stores metadata and user data  |
+| Payara        | ODISSEI Dataverse stack | gdcc/dataverse:6.6-noble| [odissei-dataverse-stack](https://github.com/odissei-data/odissei-dataverse-stack) | Runs the Dataverse application |
+| Skosmos       | Skosmos                 | sd-skosmos:v2.18.1-1.8.0| [odissei-dataverse-stack](https://github.com/odissei-data/odissei-dataverse-stack) | Vocabulary browser             |
+| Skosmos-loader| Skosmos                 | sd-skosmos:v2.18.1-1.8.0| [odissei-dataverse-stack](https://github.com/odissei-data/odissei-dataverse-stack) | Vocabulary loader              |
 | Fuseki        | Skosmos                 | stain/jena-fuseki:5.1.0 | [odissei-dataverse-stack](https://github.com/odissei-data/odissei-dataverse-stack) | RDF triple store               |
 | Varnish Cache | Skosmos                 | Latest                  | [odissei-dataverse-stack](https://github.com/odissei-data/odissei-dataverse-stack) | Caching layer                  |
 
@@ -113,11 +115,11 @@ username.
 |---------------|-------------------------|-------------------------|------------------------------------------------------------------------------------|---------------------------------------------------------|
 | SOLR          | ODISSEI Dataverse stack | 9.x                     | [odissei-dataverse-stack](https://github.com/odissei-data/odissei-dataverse-stack) | Used for indexing and search                            |
 | PostgreSQL    | ODISSEI Dataverse stack | 16                      | [odissei-dataverse-stack](https://github.com/odissei-data/odissei-dataverse-stack) | Stores metadata and user data                           |
-| Payara        | ODISSEI Dataverse stack | gdcc/dataverse:alpha    | [odissei-dataverse-stack](https://github.com/odissei-data/odissei-dataverse-stack) | Runs the Dataverse application                          |
+| Payara        | ODISSEI Dataverse stack | gdcc/dataverse:6.6-noble| [odissei-dataverse-stack](https://github.com/odissei-data/odissei-dataverse-stack) | Runs the Dataverse application                          |
 | Skosmos       | sd-skosmos              | Latest                  | [odissei-dataverse-stack](https://github.com/odissei-data/odissei-dataverse-stack) | Vocabulary browser                                      |
 | Fuseki        | sd-skosmos              | stain/jena-fuseki:5.1.0 | [odissei-dataverse-stack](https://github.com/odissei-data/odissei-dataverse-stack) | RDF triple store                                        |
 | Varnish Cache | sd-skosmos              | Latest                  | [odissei-dataverse-stack](https://github.com/odissei-data/odissei-dataverse-stack) | Caching layer                                           |
-| Prefect       | workflow-orchestrator   | 2.1.0                   |                                                                                    | Tool to ingest metadata into Dataverse using workflows. |
+| Prefect       | workflow-orchestrator   | 3.2.0                   |                                                                                    | Tool to ingest metadata into Dataverse using workflows. |
 
 #### Prefect Server: prefect
 
@@ -141,7 +143,7 @@ orchestrator setup.
 
 | **Service** | **Stack**             | **Version** | **Repository** | **Notes**                                               |
 |-------------|-----------------------|-------------|---------------------------|---------------------------------------------------------|
-| Prefect     | workflow-orchestrator | 3.1.2       |                           | Tool to ingest metadata into Dataverse using workflows. |
+| Prefect     | workflow-orchestrator | 3.2.0       |                           | Tool to ingest metadata into Dataverse using workflows. |
 
 #### Microservices Server: labs-demo
 
