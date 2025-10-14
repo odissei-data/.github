@@ -22,7 +22,7 @@ List of repositories for each application stack.
 | ODISSEI Dataverse stack | <https://github.com/odissei-data/odissei-dataverse-stack>         | master     | Deployed manually                                   |
 | SKOSMOS stack           | <https://github.com/odissei-data/sd-skosmos>                      | main       | Deployed manually                                   |
 | Workflow orchestrator   | <https://github.com/odissei-data/ingestion-workflow-orchestrator> | 3.2.0      | Automatic deployment on production via CI/CD        |
-| Microservices           | <https://github.com/odissei-data/dataverse-importer>              | main       | Microservice used to import datasets into Dataverse |
+| Microservices           | <https://github.com/odissei-data/metadata-enhancer>               | main       | Automatic via CI/CD for all microservices           |
 
 #### ODISSEI Portal
 
@@ -163,7 +163,6 @@ personnel.
 | Email Sanitizer          |             | [Email Sanitizer](https://emailsanitizer.labs.dansdemo.nl/docs)     | [email-sanitize-microservice](https://github.com/thomasve-DANS/email-sanitize-microservice)            |
 | Version Tracker          |             | [Version Tracker](https://version-tracker.labs.dansdemo.nl/docs)    | [version-tracker](https://github.com/odissei-data/version-tracker)                                     |
 | DOI Minter               |             | [DOI Minter](https://dataciteminter.labs.dansdemo.nl/docs)          | [submitmd2dc-service](https://github.com/ekoi/submitmd2dc-service/tree/using-dans-transformer-service) |
-| Semantic Enrichment      |             |                                                                     | [semantic-enrichment](https://github.com/Dans-labs/semantic-enrichment)                                |
 | OAI-PMH Harvester        |             | [ODISSEI Harvester](https://oai-harvester.labs.dansdemo.nl/docs)    | [odissei-harvester](https://github.com/odissei-data/odissei-harvester)                                 |
 | OAI Enrichment Service   |             | [OAI Enricher Service](https://oai-service.labs.dansdemo.nl/docs)   | [oai-enricher-service](https://github.com/ekoi/oai-enricher-service)                                   |
 
