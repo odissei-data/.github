@@ -13,6 +13,8 @@ https://doi.org/10.5281/zenodo.15236529.
 
 ## ODISSEI Portal Infrastructure
 
+Technical Wiki https://github.com/odissei-data/.github/wiki
+
 ### 1. Application Stacks & Environments
 
 List of repositories for each application stack.
